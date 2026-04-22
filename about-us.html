@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="YLP - Youns Learning Platform">
     <title>YLP - Youns Learning Platform</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/images/shared/favicon.png">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -20,7 +20,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html"><img src="Home page/logo.png" alt="YLP Logo" class="logo-img"></a>
+            <a href="index.html"><img src="assets/images/home/logo.png" alt="YLP Logo" class="logo-img"></a>
 
             <button class="mobile-menu-toggle" aria-label="Toggle menu">
                 <span></span>
@@ -34,6 +34,12 @@
                 <li><a href="educational-programs.html" class="nav-link">البرامج التعليمية</a></li>
                 <li><a href="summer-programs.html" class="nav-link">البرامج الصيفية</a></li>
                 <li><a href="about-us.html" class="nav-link active">تعرف علينا</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                        <i data-lucide="moon" class="icon-moon"></i>
+                        <i data-lucide="sun" class="icon-sun"></i>
+                    </button>
+                </li>
                 <li><button class="btn btn-register">تسجيل الدخول</button></li>
             </ul>
         </div>
@@ -42,30 +48,32 @@
     <!-- Hero Story Section -->
     <br><br>
     <section class="section"
-        style="background: linear-gradient(180deg, #FFF5F3 0%, #FFEAE6 60%, #FFFFFF 100%); min-height: 70vh; display: flex; align-items: center; position: relative; overflow: visible;">
+        style="background: var(--bg-about-hero, linear-gradient(180deg, #FFF5F3 0%, #FFEAE6 60%, #FFFFFF 100%)); min-height: 70vh; display: flex; align-items: center; position: relative; overflow: visible;">
         <div class="container" style="max-width: 1400px; position: relative;">
             <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 0; align-items: center;">
                 <!-- Text Content (appears on RIGHT in RTL) -->
                 <div class="fade-in" style="order: 1; text-align: right;">
-                    <p style="font-size: 1.1rem; color: #D4847A; margin-bottom: var(--spacing-md); font-weight: 400;">
+                    <p
+                        style="font-size: 1.1rem; color: var(--text-about-accent, #D4847A); margin-bottom: var(--spacing-md); font-weight: 400;">
                         بدأ كل شيء من سؤال بسيط...
                     </p>
 
                     <h1
-                        style="font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; color: #3D4F5F; line-height: 1.5; margin-bottom: var(--spacing-lg); font-family: inherit;">
+                        style="font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; color: var(--text-about-title, #3D4F5F); line-height: 1.5; margin-bottom: var(--spacing-lg); font-family: inherit;">
                         لماذا لا يجد الأطفال تعليمًا
                         <br>
                         حقيقيًا يعزز قدراتهم؟
                     </h1>
 
-                    <p style="font-size: 1rem; color: #7A8B99; line-height: 1.8; font-weight: 400;">
+                    <p
+                        style="font-size: 1rem; color: var(--text-about-subtitle, #7A8B99); line-height: 1.8; font-weight: 400;">
                         مررنا بتجارب ومحاولات كثيرة
                     </p>
                 </div>
 
                 <!-- Boy Image (appears on LEFT in RTL) -->
                 <div class="fade-in" style="order: 2; margin-right: 150px;">
-                    <img src="about us/boy.png" alt="طالب يتساءل"
+                    <img src="assets/images/about/boy.png" alt="طالب يتساءل"
                         style="max-width: 150%; height: auto; filter: drop-shadow(0 15px 35px rgba(0,0,0,0.1));">
                 </div>
             </div>
@@ -128,16 +136,16 @@
 
     <!-- Registration Form Section -->
     <section class="section" id="registration"
-        style="background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%); padding: var(--spacing-3xl) 0; position: relative; overflow: hidden;">
+        style="background: var(--bg-registration-section, linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%)); padding: var(--spacing-3xl) 0; position: relative; overflow: hidden;">
         <div class="container">
             <!-- Header -->
             <div style="text-align: center; margin-bottom: var(--spacing-2xl);">
                 <h2
-                    style="font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; color: var(--color-gray-900); margin-bottom: var(--spacing-md);">
+                    style="font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; color: var(--text-main, #111827); margin-bottom: var(--spacing-md);">
                     <span style="color: #EC4899;">سجّل الآن</span> قبل نفاذ المقاعد
                 </h2>
                 <p
-                    style="font-size: var(--font-size-base); color: var(--color-gray-600); max-width: 600px; margin: 0 auto;">
+                    style="font-size: var(--font-size-base); color: var(--text-muted, #4B5563); max-width: 600px; margin: 0 auto;">
                     يرجى ملء البيانات التالية للتسجيل المبدئي، وسيتواصل معك فريقنا لتأكيد الحجز:
                 </p>
             </div>
@@ -150,20 +158,23 @@
                 <div class="fade-in" style="position: relative; order: 1;">
                     <!-- Form Card Container -->
                     <div
-                        style="background: white; border-radius: 24px; padding: 2.5rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.02);">
+                        style="background: var(--bg-card, white); border-radius: 24px; padding: 2.5rem; box-shadow: var(--shadow-xl); border: 1px solid var(--border-color, rgba(0, 0, 0, 0.02));">
 
                         <!-- Form Header -->
                         <div
-                            style="margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 2px solid #F3F4F6; text-align: center;">
+                            style="margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 2px solid var(--border-color, #F3F4F6); text-align: center;">
                             <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
                                 <div
                                     style="width: 50px; height: 50px; background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);">
                                     <i data-lucide="clipboard-list"
                                         style="width: 24px; height: 24px; color: white;"></i>
                                 </div>
-                                <h3 style="font-size: 1.5rem; font-weight: 700; color: #1F2937; margin: 0;">بيانات
+                                <h3
+                                    style="font-size: 1.5rem; font-weight: 700; color: var(--text-main, #1F2937); margin: 0;">
+                                    بيانات
                                     التسجيل</h3>
-                                <p style="font-size: 0.9rem; color: #6B7280; margin: 0;">جميع الحقول مطلوبة</p>
+                                <p style="font-size: 0.9rem; color: var(--text-muted, #6B7280); margin: 0;">جميع الحقول
+                                    مطلوبة</p>
                             </div>
                         </div>
 
@@ -189,7 +200,7 @@
                             <div class="input-group">
                                 <label class="form-label">المحافظة</label>
                                 <select id="governorate" required class="form-input"
-                                    style="cursor: pointer; color: #6B7280;">
+                                    style="cursor: pointer; color: var(--text-main, #374151);">
                                     <option value="" disabled selected>اختر المحافظة</option>
                                     <option value="المنيا">المنيا</option>
                                     <option value="أسيوط">أسيوط</option>
@@ -216,7 +227,7 @@
                             <div class="input-group">
                                 <label class="form-label">المرحلة الدراسية</label>
                                 <select id="grade_level" required class="form-input"
-                                    style="cursor: pointer; color: #6B7280;">
+                                    style="cursor: pointer; color: var(--text-main, #374151);">
                                     <option value="" disabled selected>اختر المرحلة الدراسية</option>
                                     <option value="ابتدائي">ابتدائي</option>
                                     <option value="إعدادي">إعدادي</option>
@@ -226,7 +237,7 @@
                             <div class="input-group">
                                 <label class="form-label">نوع التعليم</label>
                                 <select id="education_type" required class="form-input"
-                                    style="cursor: pointer; color: #6B7280;">
+                                    style="cursor: pointer; color: var(--text-main, #374151);">
                                     <option value="" disabled selected>اختر نوع التعليم</option>
                                     <option value="حكومي">حكومي</option>
                                     <option value="خاص">خاص</option>
@@ -243,7 +254,7 @@
                             <div class="input-group">
                                 <label class="form-label">هل يتوفر مع الطالب جهاز لابتوب؟</label>
                                 <select id="has_laptop" required class="form-input"
-                                    style="cursor: pointer; color: #6B7280;">
+                                    style="cursor: pointer; color: var(--text-main, #374151);">
                                     <option value="" disabled selected>اختر من فضلك</option>
                                     <option value="true">نعم</option>
                                     <option value="false">لا</option>
@@ -252,7 +263,7 @@
 
                             <!-- Submit Button -->
                             <div
-                                style="grid-column: span 2; display: flex; justify-content: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid #F3F4F6;">
+                                style="grid-column: span 2; display: flex; justify-content: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid var(--border-color, #F3F4F6);">
                                 <button type="submit" class="btn" id="submit-btn"
                                     style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); color: white; padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 700; border-radius: 50px; display: flex; align-items: center; gap: 0.75rem; box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4); transition: all 0.3s ease; border: none; cursor: pointer;"
                                     onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 15px 30px -5px rgba(245, 158, 11, 0.5)';"
@@ -430,7 +441,7 @@
     <footer style="position: relative; overflow: hidden;">
         <!-- CTA Section (Top) -->
         <div
-            style="background: linear-gradient(180deg, #F9FAFB 0%, #F3F4F6 100%); padding: 5rem 0 5rem; text-align: center; border-top: 1px solid #E5E7EB;">
+            style="background: linear-gradient(180deg, var(--bg-section) 0%, var(--bg-section-alt) 100%); padding: 5rem 0 5rem; text-align: center; border-top: 1px solid var(--border-color);">
             <div class="container">
                 <div
                     style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem;">
@@ -468,21 +479,23 @@
 
                     <!-- Title -->
                     <div>
-                        <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; color: #111827;">
+                        <h2
+                            style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--text-main, #111827);">
                             استثمر في مستقبل ابنك
                         </h2>
-                        <h3 style="font-size: 1.8rem; font-weight: 700; color: #4B5563; margin-bottom: 1rem;">
+                        <h3
+                            style="font-size: 1.8rem; font-weight: 700; color: var(--text-muted, #4B5563); margin-bottom: 1rem;">
                             التعلّم يبدأ من هنا!
                         </h3>
                     </div>
 
                     <!-- Subtitle -->
-                    <p style="font-size: 1.1rem; color: #6B7280; max-width: 500px;">
+                    <p style="font-size: 1.1rem; color: var(--text-light, #6B7280); max-width: 500px;">
                         انضم الآن لأكثر من ١٠٠٠ ولي أمر وثقوا بنا
                     </p>
 
                     <!-- CTA Button -->
-                    <a href="#registration"
+                    <a href="about-us.html#registration"
                         style="display: inline-flex; align-items: center; gap: 0.75rem; background: linear-gradient(135deg, #8B5CF6 0%, #F97316 100%); color: white; padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 700; border-radius: 50px; text-decoration: none; box-shadow: 0 10px 20px rgba(139, 92, 246, 0.2); transition: all 0.3s ease;"
                         onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 30px rgba(139, 92, 246, 0.3)';"
                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 20px rgba(139, 92, 246, 0.2)';">
@@ -510,7 +523,7 @@
                     <!-- Brand Section -->
                     <div style="display: flex; flex-direction: column; gap: 1.25rem;">
                         <a href="index.html" style="display: inline-block;">
-                            <img src="Home page/logo.png" alt="YLP Logo" style="height: 50px; width: auto;">
+                            <img src="assets/images/home/logo.png" alt="YLP Logo" style="height: 50px; width: auto;">
                         </a>
 
                         <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
@@ -677,8 +690,8 @@
         }
     </script>
 
-    <script src="app.js"></script>
-    <script src="supabase-integration.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/supabase-integration.js"></script>
     <script>lucide.createIcons();</script>
 </body>
 

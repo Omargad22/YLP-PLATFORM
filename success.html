@@ -6,20 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="YLP - تم التسجيل بنجاح">
     <title>تم التسجيل بنجاح - YLP</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/images/shared/favicon.png">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body {
             margin: 0;
-            background: linear-gradient(135deg, #FFF5F3 0%, #FFEAE6 100%);
+            background: var(--bg-body, linear-gradient(135deg, #FFF5F3 0%, #FFEAE6 100%));
             font-family: 'Cairo', sans-serif;
+            color: var(--text-main, #1F2937);
         }
 
         .success-card {
-            background: white;
+            background: var(--bg-card, white);
             padding: 3rem 2rem;
             border-radius: 24px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-xl);
             text-align: center;
             max-width: 500px;
             width: 90%;
@@ -28,6 +30,7 @@
             animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             opacity: 0;
             transform: translateY(20px);
+            border: 1px solid var(--border-color, transparent);
         }
 
         @keyframes slideUp {
@@ -40,7 +43,7 @@
         .icon-container {
             width: 100px;
             height: 100px;
-            background: #D1FAE5;
+            background: rgba(16, 185, 129, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -68,14 +71,14 @@
         }
 
         h1 {
-            color: #1F2937;
+            color: var(--text-main, #1F2937);
             font-weight: 800;
             margin-bottom: 0.75rem;
             font-size: 2rem;
         }
 
         p {
-            color: #6B7280;
+            color: var(--text-muted, #6B7280);
             line-height: 1.6;
             margin-bottom: 2rem;
             font-size: 1.1rem;
@@ -125,7 +128,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html"><img src="Home page/logo.png" alt="YLP Logo" class="logo-img"></a>
+            <a href="index.html"><img src="assets/images/home/logo.png" alt="YLP Logo" class="logo-img"></a>
 
             <button class="mobile-menu-toggle" aria-label="Toggle menu">
                 <span></span>
@@ -139,6 +142,12 @@
                 <li><a href="educational-programs.html" class="nav-link">البرامج التعليمية</a></li>
                 <li><a href="summer-programs.html" class="nav-link">البرامج الصيفية</a></li>
                 <li><a href="about-us.html" class="nav-link">تعرف علينا</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                        <i data-lucide="moon" class="icon-moon"></i>
+                        <i data-lucide="sun" class="icon-sun"></i>
+                    </button>
+                </li>
                 <li><button class="btn btn-register">تسجيل الدخول</button></li>
             </ul>
         </div>
@@ -201,7 +210,7 @@
         // Trigger confetti on load
         window.onload = createConfetti;
     </script>
-    <script src="app.js"></script>
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>
